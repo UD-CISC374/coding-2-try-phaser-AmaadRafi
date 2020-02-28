@@ -10,6 +10,6 @@ export default class GameOverScene extends Phaser.Scene {
       }
 
     create() {
-        this.add.text(20,20,"Loading...");
+        this.add.text(300,300,"GAME OVER...");
     }
 }
