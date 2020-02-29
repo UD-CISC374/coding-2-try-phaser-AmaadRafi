@@ -132,7 +132,8 @@ export default class MainScene extends Phaser.Scene {
 
   gameOver():void {
     this.gameOverText.visible = true;
-    this.scene.pause();
+    this.scene.pause("MainScene");
+    //restart on click/key press
     
   }
 
