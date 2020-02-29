@@ -6,14 +6,15 @@ export default class MainScene extends Phaser.Scene {
   p2: Phaser.GameObjects.Image;
   p3: Phaser.GameObjects.Image;
   p4: Phaser.GameObjects.Image;
-  pipes: Phaser.Physics.Arcade.Group;
+  p5: Phaser.GameObjects.Image;
+  enemies: Phaser.Physics.Arcade.Group;
   cursorKeys: Phaser.Types.Input.Keyboard.CursorKeys;
   spacebar: Phaser.Input.Keyboard.Key;
   score: number = 0;
-  birdSpeed: number;
+  birdSpeed: number = 12;
   pipeSpeed: number;
   scoreText: Phaser.GameObjects.Text;
-  gameOverText: Phaser.GameObjects.Text;
+  gameOverText: Phaser.GameObjects.Text;  
 
   constructor() {
     super({ key: 'MainScene' });
@@ -24,83 +25,93 @@ export default class MainScene extends Phaser.Scene {
     this.background = this.add.image(0,0, "background");
     this.background.setOrigin(0,0);
     this.scoreText = this.add.text(20,20,"Score: 0");
-    this.gameOverText = this.add.text(200, 250, "game over", {
-      font: "50px Arial",
+
+    this.gameOverText = this.add.text(1920/2 - 300, 1080/2 - 50, "GAME OVER", {
+      font: "100px Arial",
       fill: "RED"
     });
+
     this.gameOverText.visible = false;
+
 
     // bird
     this.bird = this.add.sprite(200, 300, "bird");
     this.physics.add.existing(this.bird);
-    this.bird.setScale(.4);
+    this.bird.setScale(.2);
     //this.bird.angle -= 10;
 
     // pipes / obstacles
-    this.p1=this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"pipe");
-    this.p2=this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"pipe");
-    this.p3=this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"pipe");
-    this.p4=this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"pipe");
-    this.p1.setScale(.15);
-    this.p2.setScale(.15);
-    this.p3.setScale(.15);
-    this.p4.setScale(.15);
+    this.p1 = this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"enemy1");
+    this.p2=this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"enemy2");
+    this.p3=this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"enemy3");
+    this.p4=this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"enemy4");
+    this.p5=this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"enemy5");
+    this.p1.setScale(.3);
+    this.p2.setScale(.3);
+    this.p3.setScale(.3);
+    this.p4.setScale(.3);
+    this.p5.setScale(.3);
+    this.p1.flipX = true;
+    this.p2.flipX = true;
+    this.p3.flipX = true;
+    this.p4.flipX = true;
+    this.p5.flipX = true;
 
-    this.pipes =  this.physics.add.group();
-    this.pipes.add(this.p1);
-    this.pipes.add(this.p2);
-    this.pipes.add(this.p3);
-    this.pipes.add(this.p4);
+
+    this.enemies =  this.physics.add.group();
+    this.enemies.add(this.p1);
+    this.enemies.add(this.p2);
+    this.enemies.add(this.p3);
+    this.enemies.add(this.p4);
+    this.enemies.add(this.p5);
 
     // keyboard
     this.cursorKeys = this.input.keyboard.createCursorKeys();
     this.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
 
     // Physics
-    this.physics.add.overlap(this.bird, this.pipes, this.gameOver, this.nullCallback);
-    this.physics.world.setBoundsCollision();
+    this.physics.add.overlap(this.bird, this.enemies, this.gameOver, this.nullCallback, this);
 
   }
 
   update() {
-    //this.movePipe(this.bird, 5);
-    this.movePipe(this.p1, 10);
-    this.movePipe(this.p2, 10);
-    this.movePipe(this.p3, 10);
-    this.movePipe(this.p4, 10);
+    // enemy movement
+    this.moveEnemy(this.p1, 10);
+    this.moveEnemy(this.p2, 12);
+    this.moveEnemy(this.p3, 12);
+    this.moveEnemy(this.p4, 15);
+    this.moveEnemy(this.p5, 20);
 
-    // shift pipes
-    this.shiftPipe(this.p1);
-    this.shiftPipe(this.p2);
-    this.shiftPipe(this.p3);
-    this.shiftPipe(this.p4);
+    // shift enemy 
+    this.resetEnemy(this.p1);
+    this.resetEnemy(this.p2);
+    this.resetEnemy(this.p3);
+    this.resetEnemy(this.p4);
+    this.resetEnemy(this.p5);
 
-    // reset sprites
+    // reset bird
     if(this.bird.y < 0)
       this.bird.y = 1080;
-
     if(this.bird.y > 1080)
       this.bird.y = 0;
 
     // bird movement
-    this.birdMove(this.bird, this.cursorKeys);
+    this.birdMove(this.bird, this.cursorKeys, this.birdSpeed);
 
     // update score
     this.updateScore();
   }
 
-  movePipe(pipe, speed) {
+  moveEnemy(pipe, speed) {
       pipe.x -= speed;
   }
 
-  birdMove(bird, kb) {
-    if(kb.down.isDown) {
-      bird.y += 10;
-    }
+  birdMove(bird, kb, speed) {
+    if(kb.down.isDown) { bird.y += speed; }
+    if(kb.up.isDown) { bird.y -= speed; }
+    if(kb.right.isDown) { bird.x += speed }
+    if(kb.left.isDown) { bird.x -= speed }
 
-    if(kb.up.isDown) {
-      bird.y -= 10;
-    }
   }
 
   resetPipe(pipe) {
@@ -108,7 +119,7 @@ export default class MainScene extends Phaser.Scene {
     pipe.y = Phaser.Math.Between(100, 980); // move vertically randomly
   }
 
-  shiftPipe(pipe) {
+  resetEnemy(pipe) {
     if(pipe.x < 0) {
       this.resetPipe(pipe);
       this.score += 10;
@@ -119,16 +130,12 @@ export default class MainScene extends Phaser.Scene {
     this.scoreText.setText("Score: " + this.score);
   }
 
-  gameOver() {
+  gameOver():void {
     this.gameOverText.visible = true;
-    this.scene.stop("MainScene");
-    this.scene.start("GameOverScene");
+    this.scene.pause();
+    
   }
 
-  dropObject(object) {
-    object.y -= 10;
-  }
-
-  nullCallback() {}
+  nullCallback() {console.log("collision callback")}
 
 }
