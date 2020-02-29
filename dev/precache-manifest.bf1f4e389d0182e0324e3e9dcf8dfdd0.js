@@ -540,15 +540,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/coding-2-try-phaser-AmaadRafi/devassets/yellow.png"
   },
   {
-    "revision": "21842b4aa2d4686e569d",
-    "url": "/coding-2-try-phaser-AmaadRafi/devgen.main.58f08427be70b53a6e93.bundle.js"
+    "revision": "905b861e2fbbea999047",
+    "url": "/coding-2-try-phaser-AmaadRafi/devgen.main.077522d5354081aaae36.bundle.js"
   },
   {
     "revision": "201b65bee9df6270f739",
     "url": "/coding-2-try-phaser-AmaadRafi/devgen.vendors.a047ee0740c7d21714d9.bundle.js"
   },
   {
-    "revision": "ea8efaa08e76f7f4ab36ed9d1e751d5e",
+    "revision": "f1cd1d66ed0650a2a38546b3d70f3dff",
     "url": "/coding-2-try-phaser-AmaadRafi/devindex.html"
   },
   {
