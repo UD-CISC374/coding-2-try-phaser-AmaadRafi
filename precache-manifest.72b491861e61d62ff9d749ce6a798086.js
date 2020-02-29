@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cd1f0c8af4b00fed74af5686ce700b9e",
+    "revision": "570bb78dfbeb9dd93db236e3b683fa79",
     "url": "assets/.DS_Store"
   },
   {
-    "revision": "64dff69596c2e1b193154761757cc1d5",
+    "revision": "84da5d1e876a1c399beb35bca6150929",
     "url": "assets/bird.png"
   },
   {
@@ -12,11 +12,35 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/citations.md"
   },
   {
+    "revision": "56a3648a20c5b2ad787d2b861cd2506e",
+    "url": "assets/enemies/.DS_Store"
+  },
+  {
+    "revision": "74e20e91553024112d18b06d93d3f08c",
+    "url": "assets/enemies/e1.png"
+  },
+  {
+    "revision": "8d8eea701297940ea15c0201cab9d5c7",
+    "url": "assets/enemies/e2.png"
+  },
+  {
+    "revision": "5d23c3773bae1f13b04f8eaa6b4c7152",
+    "url": "assets/enemies/e3.png"
+  },
+  {
+    "revision": "d289e8abe7afb7c178332499e6f98463",
+    "url": "assets/enemies/e4.png"
+  },
+  {
+    "revision": "76251c4d742e9e1e622e0150433ffb36",
+    "url": "assets/enemies/e5.png"
+  },
+  {
     "revision": "b5472e0e1f79bfc4983828d262362523",
     "url": "assets/green.png"
   },
   {
-    "revision": "796a1509440fcb97a7276ca4cbc0c266",
+    "revision": "5517f439eb2021959b0b9387a7a2c57a",
     "url": "assets/images/.DS_Store"
   },
   {
@@ -26,6 +50,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b878a23add9b5e96b64a6ef776c50d29",
     "url": "assets/images/bg1.png"
+  },
+  {
+    "revision": "84da5d1e876a1c399beb35bca6150929",
+    "url": "assets/images/bird.png"
   },
   {
     "revision": "6a091df6870e8c5b79e36dee60d5f5f0",
@@ -504,32 +532,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/images/ninja/Throw__009.png"
   },
   {
-    "revision": "84da5d1e876a1c399beb35bca6150929",
-    "url": "assets/images/pipe.png"
-  },
-  {
     "revision": "29aaf0ffc8d566438cb66cfb549bf004",
     "url": "assets/jump.wav"
   },
   {
-    "revision": "08424197e1e042c4377677d809b3217c",
-    "url": "assets/kunai.png"
+    "revision": "64dff69596c2e1b193154761757cc1d5",
+    "url": "assets/yellow.png"
   },
   {
-    "revision": "e124eec0412519268d2b7671ca0a137f",
-    "url": "assets/ninja.png"
-  },
-  {
-    "revision": "84da5d1e876a1c399beb35bca6150929",
-    "url": "assets/pipe.png"
-  },
-  {
-    "revision": "26a1d69ef09036ac4bcd1f696b539016",
+    "revision": "c1bd7a96ce6770cbf3e1c5e304ceabb3",
     "url": "index.html"
   },
   {
-    "revision": "d8205e4804cc17ac8003",
-    "url": "main.34a525fe38888f471549.bundle.js"
+    "revision": "88b17612e18da238b822",
+    "url": "main.9cfbcbe82043933ce94f.bundle.js"
   },
   {
     "revision": "fc8cefcfb102b35601f09d51ee2512ef",
@@ -540,7 +556,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "sw.js"
   },
   {
-    "revision": "fbff0a3ce8516e2748f8",
-    "url": "vendors.ad7225835e96eb36be95.bundle.js"
+    "revision": "201b65bee9df6270f739",
+    "url": "vendors.a047ee0740c7d21714d9.bundle.js"
   }
 ]);
