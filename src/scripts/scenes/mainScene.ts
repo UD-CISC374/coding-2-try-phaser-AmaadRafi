@@ -41,7 +41,7 @@ export default class MainScene extends Phaser.Scene {
     //this.bird.angle -= 10;
 
     // pipes / obstacles
-    this.p1 = this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"enemy1");
+    this.p1=this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"enemy1");
     this.p2=this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"enemy2");
     this.p3=this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"enemy3");
     this.p4=this.physics.add.image(Phaser.Math.Between(2400, 3000),Phaser.Math.Between(100,980),"enemy4");
@@ -102,11 +102,11 @@ export default class MainScene extends Phaser.Scene {
     this.updateScore();
   }
 
-  moveEnemy(pipe, speed) {
+  moveEnemy(pipe, speed):void {
       pipe.x -= speed;
   }
 
-  birdMove(bird, kb, speed) {
+  birdMove(bird, kb, speed):void {
     if(kb.down.isDown) { bird.y += speed; }
     if(kb.up.isDown) { bird.y -= speed; }
     if(kb.right.isDown) { bird.x += speed }
@@ -114,29 +114,29 @@ export default class MainScene extends Phaser.Scene {
 
   }
 
-  resetPipe(pipe) {
+  resetPipe(pipe):void{
     pipe.x = Phaser.Math.Between(2400, 3000); // move off the map to right side
     pipe.y = Phaser.Math.Between(100, 980); // move vertically randomly
   }
 
-  resetEnemy(pipe) {
+  resetEnemy(pipe):void {
     if(pipe.x < 0) {
       this.resetPipe(pipe);
       this.score += 10;
     }
   }
 
-  updateScore(){
+  updateScore():void{
     this.scoreText.setText("Score: " + this.score);
   }
 
   gameOver():void {
     this.gameOverText.visible = true;
-    this.scene.pause("MainScene");
+    this.scene.pause('MainScene');
     //restart on click/key press
     
   }
 
-  nullCallback() {console.log("collision callback")}
+  nullCallback() {console.log("collision callback");}
 
 }
