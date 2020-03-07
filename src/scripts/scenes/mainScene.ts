@@ -1,6 +1,9 @@
 export default class MainScene extends Phaser.Scene {
   // Objects
-  private background: Phaser.GameObjects.Image;
+  background: Phaser.GameObjects.Image;
+  bgMusic: Phaser.Sound.BaseSound;
+  sfxPoint: Phaser.Sound.BaseSound;
+  sfxHit: Phaser.Sound.BaseSound;
   bird: Phaser.GameObjects.Image;
   p1: Phaser.GameObjects.Image;
   p2: Phaser.GameObjects.Image;
@@ -24,10 +27,27 @@ export default class MainScene extends Phaser.Scene {
   create() {
     this.background = this.add.image(0,0, "background");
     this.background.setOrigin(0,0);
-    this.scoreText = this.add.text(20,20,"Score: 0");
+    this.scoreText = this.add.text(20,20,"Score: 0", {
+      font: "50px Courier New Courier, monospace",
+    });
 
-    this.gameOverText = this.add.text(1920/2 - 300, 1080/2 - 50, "GAME OVER", {
-      font: "100px Arial",
+    this.bgMusic = this.sound.add("bgmusic");
+    this.sfxPoint = this.sound.add("sfx_point");
+    this.sfxHit = this.sound.add("sfx_hit");
+
+    let musicConfig = {
+      mute: false,
+      volume: .2,
+      rate: 1,
+      detune: 1,
+      seek: 0,
+      loop: true,
+      delay: 0
+    }
+    this.bgMusic.play(musicConfig);
+
+    this.gameOverText = this.add.text(1920/2 - 400, 1080/2 - 50, "GAME OVER", {
+      font: "150px Courier New Courier, monospace",
       fill: "RED"
     });
 
@@ -123,6 +143,7 @@ export default class MainScene extends Phaser.Scene {
     if(pipe.x < 0) {
       this.resetPipe(pipe);
       this.score += 10;
+      this.sfxPoint.play();
     }
   }
 
@@ -131,8 +152,15 @@ export default class MainScene extends Phaser.Scene {
   }
 
   gameOver():void {
+    this.sfxHit.play();
     this.gameOverText.visible = true;
-    this.scene.pause('MainScene');
+
+    this.scene.stop('MainScene');
+    this.score = 0;
+    this.scene.start('PreloadScene');
+    
+
+
     //restart on click/key press
     
   }
