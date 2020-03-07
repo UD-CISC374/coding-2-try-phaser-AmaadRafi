@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "570bb78dfbeb9dd93db236e3b683fa79",
+    "revision": "c5ad72ec429c775cf18a0e3c1faf3703",
     "url": "assets/.DS_Store"
   },
   {
@@ -532,20 +532,56 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/images/ninja/Throw__009.png"
   },
   {
+    "revision": "21b94c4d82e0d59169f8b6c782e3b4c7",
+    "url": "assets/sounds/.DS_Store"
+  },
+  {
+    "revision": "629d572e913e69fd0a3b27a22ad90660",
+    "url": "assets/sounds/Everything/sfx_die.wav"
+  },
+  {
+    "revision": "0941f389fbd65a06291a90dd17ef2e36",
+    "url": "assets/sounds/Everything/sfx_hit.wav"
+  },
+  {
+    "revision": "5a6c267d6743faf5069536fda2553b27",
+    "url": "assets/sounds/Everything/sfx_point.wav"
+  },
+  {
+    "revision": "3de704c77bf2eec51ba00897a8712355",
+    "url": "assets/sounds/Everything/sfx_swooshing.wav"
+  },
+  {
+    "revision": "4355dd665aa14ae22458f03e6b5643f8",
+    "url": "assets/sounds/Everything/sfx_wing.wav"
+  },
+  {
+    "revision": "bae66c8ad3f01c522fab9be089693fef",
+    "url": "assets/sounds/background.mp3"
+  },
+  {
+    "revision": "0941f389fbd65a06291a90dd17ef2e36",
+    "url": "assets/sounds/hit.wav"
+  },
+  {
     "revision": "29aaf0ffc8d566438cb66cfb549bf004",
-    "url": "assets/jump.wav"
+    "url": "assets/sounds/jump.wav"
+  },
+  {
+    "revision": "5a6c267d6743faf5069536fda2553b27",
+    "url": "assets/sounds/point.wav"
   },
   {
     "revision": "64dff69596c2e1b193154761757cc1d5",
     "url": "assets/yellow.png"
   },
   {
-    "revision": "0de7cee3c103945a0ddd8796a89348d2",
+    "revision": "e482ecd48335a87763bc4d8e92c4be93",
     "url": "index.html"
   },
   {
-    "revision": "855655d673e04653624d",
-    "url": "main.4a86b3caca3beecf03ca.bundle.js"
+    "revision": "461e66eaf676c52d5c93",
+    "url": "main.7b8791388b8755267d9c.bundle.js"
   },
   {
     "revision": "fc8cefcfb102b35601f09d51ee2512ef",

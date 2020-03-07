@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "570bb78dfbeb9dd93db236e3b683fa79",
+    "revision": "c5ad72ec429c775cf18a0e3c1faf3703",
     "url": "/coding-2-try-phaser-AmaadRafi/finalassets/.DS_Store"
   },
   {
@@ -532,23 +532,59 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/coding-2-try-phaser-AmaadRafi/finalassets/images/ninja/Throw__009.png"
   },
   {
+    "revision": "21b94c4d82e0d59169f8b6c782e3b4c7",
+    "url": "/coding-2-try-phaser-AmaadRafi/finalassets/sounds/.DS_Store"
+  },
+  {
+    "revision": "629d572e913e69fd0a3b27a22ad90660",
+    "url": "/coding-2-try-phaser-AmaadRafi/finalassets/sounds/Everything/sfx_die.wav"
+  },
+  {
+    "revision": "0941f389fbd65a06291a90dd17ef2e36",
+    "url": "/coding-2-try-phaser-AmaadRafi/finalassets/sounds/Everything/sfx_hit.wav"
+  },
+  {
+    "revision": "5a6c267d6743faf5069536fda2553b27",
+    "url": "/coding-2-try-phaser-AmaadRafi/finalassets/sounds/Everything/sfx_point.wav"
+  },
+  {
+    "revision": "3de704c77bf2eec51ba00897a8712355",
+    "url": "/coding-2-try-phaser-AmaadRafi/finalassets/sounds/Everything/sfx_swooshing.wav"
+  },
+  {
+    "revision": "4355dd665aa14ae22458f03e6b5643f8",
+    "url": "/coding-2-try-phaser-AmaadRafi/finalassets/sounds/Everything/sfx_wing.wav"
+  },
+  {
+    "revision": "bae66c8ad3f01c522fab9be089693fef",
+    "url": "/coding-2-try-phaser-AmaadRafi/finalassets/sounds/background.mp3"
+  },
+  {
+    "revision": "0941f389fbd65a06291a90dd17ef2e36",
+    "url": "/coding-2-try-phaser-AmaadRafi/finalassets/sounds/hit.wav"
+  },
+  {
     "revision": "29aaf0ffc8d566438cb66cfb549bf004",
-    "url": "/coding-2-try-phaser-AmaadRafi/finalassets/jump.wav"
+    "url": "/coding-2-try-phaser-AmaadRafi/finalassets/sounds/jump.wav"
+  },
+  {
+    "revision": "5a6c267d6743faf5069536fda2553b27",
+    "url": "/coding-2-try-phaser-AmaadRafi/finalassets/sounds/point.wav"
   },
   {
     "revision": "64dff69596c2e1b193154761757cc1d5",
     "url": "/coding-2-try-phaser-AmaadRafi/finalassets/yellow.png"
   },
   {
-    "revision": "ff118aa9ee26becc4c70",
-    "url": "/coding-2-try-phaser-AmaadRafi/finalgen.main.74b066443021bec419a2.bundle.js"
+    "revision": "a7bd0d4e16531d0a2e87",
+    "url": "/coding-2-try-phaser-AmaadRafi/finalgen.main.13b6ba425e4f61de1afe.bundle.js"
   },
   {
     "revision": "201b65bee9df6270f739",
     "url": "/coding-2-try-phaser-AmaadRafi/finalgen.vendors.a047ee0740c7d21714d9.bundle.js"
   },
   {
-    "revision": "80040242d87221cc419faab6526fc163",
+    "revision": "9a4b6fdfff96b60c17aeb26295101175",
     "url": "/coding-2-try-phaser-AmaadRafi/finalindex.html"
   },
   {
